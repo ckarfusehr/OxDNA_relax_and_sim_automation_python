@@ -1,0 +1,32 @@
+#### PROGRAM PARAMETERS ####
+backend = CPU
+backend_precision = double
+interaction_type = DNA2
+max_io = 50
+# model and salt concentration (in molar)
+salt_concentration = 0.5
+max_backbone_force = 5.
+max_backbone_force_far = 10.
+ensemble = NVT
+sim_type = MC
+steps = 10000 # betwenn 10**2 - 10**4
+T = 300K
+refresh_vel = true
+# the next 4 options can be changed to improve performance
+delta_translation = 0.22 #or 0.1 sugg. by manual
+delta_rotation = 0.22 # or 0.1 sugg. by manual
+verlet_skin = 1.0
+cells_auto_optimisation = true
+
+#### INPUT / OUTPUT ####
+# topology and initial configuration files
+#conf_file = dat1.oxdna # set in oxpy script
+#topology = top1.top # set in oxpy script
+
+trajectory_file = relax1.trj.dat
+lastconf_file = relax1.dat
+energy_file = relax1.nrg
+restart_step_counter = true
+print_energy_every = 200
+print_conf_interval = 1e3
+time_scale = linear

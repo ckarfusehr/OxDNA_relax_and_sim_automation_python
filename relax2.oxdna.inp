@@ -1,0 +1,50 @@
+### DNA ORIGAMI RELAXATION - PART 2 / 3
+
+# BACKEND
+backend = CUDA
+CUDA_list = verlet
+CUDA_sort_every = 0
+backend_precision = mixed
+sim_type = MD
+max_io = 50
+
+# ENSEMBLE
+interaction_type = DNA2
+ensemble = NVT
+T = 300K
+thermostat = langevin
+diff_coeff = 0.5
+newtonian_steps = 103
+salt_concentration = 0.5
+
+# SIMULATION
+steps = 1000000
+dt = 0.002
+
+verlet_skin = 1.0
+refresh_vel = true
+
+max_backbone_force = 5.
+max_backbone_force_far = 10.
+reset_com_momentum = true
+
+use_edge = 1
+edge_n_forces = 1
+max_density_multiplier = 10
+cells_auto_optimisation = true
+
+# SETUP
+conf_file = relax1.dat
+#topology = top.top # set in oxpy script
+#external_forces = true # set in oxpy script
+#external_forces_file = forces.txt # set in oxpy script
+
+# OUTPUT
+trajectory_file = relax2.trj.dat
+lastconf_file = relax2.dat
+energy_file = relax2.nrg
+
+restart_step_counter = true
+print_energy_every = 1e4
+print_conf_interval = 1e4
+time_scale = linear
